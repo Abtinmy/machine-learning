@@ -30,7 +30,7 @@ class MultiVariableLinearRegression(LinearModel):
 
     def predict(self, x):
         x_new = np.column_stack((np.ones(x.shape[0]), x))
-        return np.sum(self.theta * x, axis=1)
+        return np.dot(x_new, self.theta)
 
 
 def main():
