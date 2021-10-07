@@ -23,7 +23,7 @@ class MultiVariableLinearRegression(LinearModel):
 
             if (i + 1) % display_rate == 0:
                 print(f"Iteration: {i}, theta: {self.theta}, cost: {cost}")
-                self.plot(list(range(0, 47)), y, np.sum(self.theta * x_new, axis=1))
+                self.plot(list(range(x.shape[0])), y, np.sum(self.theta * x_new, axis=1))
 
     def fit(self, x, y):
         self._gradient_descent_multi(x, y)
